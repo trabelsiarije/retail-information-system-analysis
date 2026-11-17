@@ -1,0 +1,17 @@
+﻿table,traitement,lignes_avant,lignes_apres,lignes_impactees,justification
+orders,Suppression des commandes en double,99441,99441,,
+orders,Restriction à la période 2017-01 → 2018-08,99441,99092,349,Mois de début et de fin d'extraction incomplets (voir rapport qualité)
+orders,Exclusion des commandes avec client inconnu,99092,99092,,
+orders,Date de validation antérieure à l'achat → mise à vide,99092,99092,,0 dates corrigées
+orders,Date de remise transporteur antérieure à l'achat → mise à vide,99092,99092,,166 dates corrigées
+orders,Date de livraison client antérieure à l'achat → mise à vide,99092,99092,,0 dates corrigées
+orders,Remise transporteur postérieure à la livraison → mise à vide,99092,99092,,19 dates corrigées
+customers,"Normalisation des noms de ville (minuscules, sans accents)",99441,99441,,
+customers,Remplacement de customer_id par customer_unique_id comme identifiant client,99441,96096,3345,Un client réel possède un customer_id différent à chaque commande
+products,Catégorie manquante → 'non_renseignee',32951,32951,,610 produits concernés
+categories,Ajout des traductions manquantes,71,73,-2,"pc_gamer, portateis_cozinha_e_preparadores_de_alimentos"
+order_items,Conservation des articles des commandes retenues,112650,112279,371,
+order_items,Exclusion des articles avec produit ou vendeur inconnu,112279,112279,,
+order_items,Exclusion des prix ≤ 0 et frais négatifs,112279,112279,,
+payments,Paiements des commandes retenues ; 'not_defined' → 'non_renseigne',103886,103520,366,
+reviews,Un seul avis par commande (le plus récent),99224,98330,894,Certaines commandes avaient plusieurs avis
